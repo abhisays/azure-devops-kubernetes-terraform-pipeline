@@ -22,14 +22,12 @@ stages:
 - stage: QADeploy
   dependsOn: 
   - Build
-  - DevDeploy
   jobs:
   - job: QADeployJob
     steps:
     - bash: echo QADeployJob
 - stage: ProdDeploy
   dependsOn: 
-  - Build
   - DevDeploy
   - QADeploy
   jobs:
